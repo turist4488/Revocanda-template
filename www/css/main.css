@@ -1,12 +1,3 @@
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-html body {
-  font-family: 'Open Sans', sans-serif;
-}
-
 .slider-dashes {
   display: inline-block;
   text-align: center;
@@ -40,6 +31,15 @@ html body {
   opacity: 0;
   width: 100%;
   border: none;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html body {
+  font-family: 'Open Sans', sans-serif;
 }
 
 .header__nav-item .menu-lang-btn {
@@ -230,6 +230,95 @@ html body {
   width: 60%;
   display: inline-block;
   padding-bottom: 15px;
+}
+
+.experts-notes {
+  background: #2d2d2d url("../img/slider2.jpg");
+  background-blend-mode: overlay;
+  background-size: 100% auto;
+  max-height: 510px;
+  height: auto;
+}
+
+.experts-notes__title {
+  color: #fff;
+  font-size: 2em;
+  text-align: center;
+  padding: 0;
+  margin-top: 80px;
+}
+
+.experts-notes__slider {
+  margin-bottom: 90px;
+  padding: 0 30px;
+}
+
+.experts-notes__slider .slick-arrow {
+  z-index: 100;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  border: 1px solid #fff;
+  padding: 2px;
+  font-size: 1.875em;
+  width: 45px;
+  background: transparent;
+  color: #fff;
+  transition: all 0.2s;
+  border-radius: 2px;
+}
+
+.experts-notes__slider .slick-arrow:hover {
+  color: #cc0000;
+  background-color: #fff;
+}
+
+.experts-notes__slider .slick-prev {
+  left: 0;
+}
+
+.experts-notes__slider .slick-next {
+  right: 0;
+}
+
+.experts-notes__item {
+  margin: 0 20px;
+  padding: 0 150px;
+  color: #fff;
+  text-align: center;
+}
+
+.experts-notes__item::before {
+  content: ",,";
+  padding-top: -20px;
+  display: inline-block;
+  font-size: 5.325em;
+  font-family: 'Georgia', serif;
+  color: #fff;
+}
+
+.experts-notes__author {
+  margin-top: 30px;
+}
+
+.experts-notes__author-name {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.experts-notes__author-pos {
+  font-size: 0.875em;
+}
+
+.experts-notes__author::before {
+  content: "";
+  display: block;
+  margin: 10px auto;
+  background-color: #1874cd;
+  height: 2px;
+  width: 150px;
 }
 
 /*# sourceMappingURL=main.css.map */
