@@ -1,0 +1,49 @@
+.speakers {
+  position: relative;
+
+  &__title {
+    position: relative;
+    color: $heading-color;
+    font-size: 2em;
+    line-height: 2.5;
+    margin-bottom: 25px;
+    margin-top: 50px;
+  }
+  &__slider {
+    margin: 0 auto;
+  }
+  &__container {
+  }
+
+  .speaker__item-content {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    &:hover .speaker__item-info {
+      opacity: 1;
+    }
+  }
+
+  .speaker__item-info {
+    color: #fff;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: transparentize($font-hover-color, 0.1);
+    transition: opacity 0.2s;
+  }
+
+  .speaker__item-name {
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .speaker__item-pos {
+    font-size: 0.875em;
+    width: 60%;
+    display: inline-block;
+    padding-bottom: 15px;
+  }
+}

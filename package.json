@@ -1,0 +1,19 @@
+{
+  "name": "revocanda-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp sass && gulp sass:watch"
+  },
+  "author": "Roman Sachenok (turist4488@gmail.com)",
+  "license": "ISC",
+  "dependencies": {
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}

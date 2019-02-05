@@ -1,0 +1,48 @@
+@import "parts/variables";
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.slider-dashes {
+  display: inline-block;
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 100px;
+  line-height: 0;
+
+  li {
+    position: relative;
+    width: 15px;
+    display: inline-block;
+    margin: 0 5px;
+    height: 3px;
+    padding: 0;
+    background-color: #dcdcdc;
+    transition: all 0.4s;
+    &.slick-active {
+      width: 30px;
+      background-color: red;
+    }
+
+    button {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      height: 100%;
+      opacity: 0;
+      width: 100%;
+      border: none;
+    }
+  }
+}
+
+@import "parts/header";
+@import "parts/main-poster";
+@import "parts/speakers";

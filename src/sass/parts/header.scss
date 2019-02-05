@@ -1,0 +1,81 @@
+.header__nav-item .menu-lang-btn {
+  color: #7f7e7c;
+  padding: 9px 25px;
+  border-left: 1px solid #7f7e7c;
+  border-radius: 0;
+  &:hover,
+  .nav &:focus{
+    background-color: #fff;
+  }
+  .caret {
+    color: #1874cd;
+  }
+}
+.header {
+  &-logo {
+    padding-top: 10px;
+  }
+  &__nav {
+    display: block;
+    width: 65%;
+    padding: 0;
+    float: right;
+    &-menu {
+      padding: 24px 0;
+      float: right;
+    }
+
+    &-item {
+      float: right;
+      a.menu-btn {
+        padding: 10px 25px;
+        &::after {
+          content: "";
+          display: block;
+          opacity: 0;
+          position: relative;
+          top: 35px;
+          height: 2px;
+          background-color: red;
+        }
+        &:hover {
+          background-color: #fff;
+        }
+        &:hover::after {
+          opacity: 1;
+        }
+      }
+    }
+
+    .dropdown-menu {
+      padding-left: 8px;
+      padding-right: 6px;
+      margin: 0;
+      min-width: 105px;
+      box-shadow: none;
+      border: none;
+      color: #7f7e7c;
+      li a {
+        color: #7f7e7c;
+        width: 90%;
+        display: block;
+        margin: 10px auto;
+        padding: 5px 10px;
+        &:hover {
+          background-color: white;
+          color: $font-hover-color;
+        }
+      }
+    }
+  }
+  &__sign-up-btn {
+    width: 150px;
+    font-size:  0.875em;
+    background-color: #1874cd;
+    border-radius: 0;
+    text-transform: uppercase;
+    height: 100%;
+    padding: 36px 31px;
+    float: right;
+  }
+}
