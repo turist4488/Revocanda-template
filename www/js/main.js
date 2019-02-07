@@ -8,6 +8,13 @@ jQuery().ready(function ($) {
         appendDots: '.slick-list',
         dotsClass: 'slider-dashes' // створив свій клас для кнопок слайдера '.slider-dashes' в файлі main.scss
     });
+
+    //відображення модальних вікон
+    $('.speakers [data-target*="speaker"]').click(function () {
+        //alert($(`.speakers [id=${this.getAttribute('data-target')}]`));
+      $(`.modal[id=${this.getAttribute('data-target')}]`).modal('show');
+    });
+
     $('.single-item').slick({
         speed: 1000
     });

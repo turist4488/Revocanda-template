@@ -1,9 +1,8 @@
 .experts-notes {
-  background: #2d2d2d url("../img/slider2.jpg");
+  background: #2d2d2d url("../img/slider2.jpg") no-repeat;
   background-blend-mode: overlay;
-  background-size: 100% auto;
-  max-height: 510px;
-  height: auto;
+  background-size: 100% 100%;
+  overflow: hidden;
 
   &__title {
     color: #fff;
