@@ -1,4 +1,62 @@
+.menu-lang-btn {
+  color: #7f7e7c;
+  padding: 9px 25px;
+  border-left: 1px solid #7f7e7c;
+  border-radius: 0;
+}
+  @media (max-width: 992px) {
+    .menu-lang-btn {
+      padding: 2px 10px;
+    }
+  }
+  .menu-lang-btn:hover {
+    background-color: #fff;
+  }
 
+  .menu-lang-btn .caret {
+    color: #1874cd;
+  }
+
+.dropdown-menu {
+  padding-left: 8px;
+  padding-right: 6px;
+  margin: 0;
+  min-width: 105px;
+  box-shadow: none;
+  border: none;
+  color: #7f7e7c;
+  li a {
+    color: #7f7e7c;
+    width: 90%;
+    display: block;
+    margin: 10px auto;
+    padding: 5px 10px;
+    &:hover {
+      background-color: white;
+      color: $font-hover-color;
+    }
+  }
+}
+
+.nav-sm-buttons {
+  display: none;
+  margin-top: 35px;
+}
+
+.dropdown-list {
+  display: block;
+  text-align: center;
+  float: none;
+  ul {
+    float: none;
+  }
+  li {
+    display: block;
+    text-align: center;
+    float: none;
+    padding: 10px 0 ;
+  }
+}
 //СТИЛІ ДЛЯ КНОПОК СЛАЙДЕРА
 .slider-dashes {
   display: inline-block;

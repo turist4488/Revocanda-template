@@ -1,42 +1,101 @@
-.header__nav-item .menu-lang-btn {
-  color: #7f7e7c;
-  padding: 9px 25px;
-  border-left: 1px solid #7f7e7c;
-  border-radius: 0;
-  &:hover,
-  .nav &:focus{
-    background-color: #fff;
-  }
-  .caret {
-    color: #1874cd;
-  }
-}
+
 .header {
+  .menu-lang-btn {
+    color: #7f7e7c;
+    padding: 9px 25px;
+    border-left: 1px solid #7f7e7c;
+    border-radius: 0;
+    @media (max-width: 992px) {
+      padding: 2px 10px;
+    }
+    &:hover,
+    .nav &:focus{
+      background-color: #fff;
+    }
+    .caret {
+      color: #1874cd;
+    }
+  }
+  .container {
+    .navbar-toggler {
+      padding: 4px;
+      border: none;
+      border-radius: 0;
+      display: none;
+      background-color: $bg-color;
+      &-dash {
+        border-radius: 1px;
+        display: block;
+        margin: 2px;
+        height: 1px;
+        width: 7px;
+        background-color: #fff;
+      }
+    }
+    @media (min-width: 992px) {
+      width: 100%;
+      float: none;
+      padding: 0 0 0 15px;
+    }
+    @media (min-width: 768px) {
+      width: 100%;
+      float: none;
+      padding: 0 0 0 15px;
+    }
+    @media (max-width: 767px) {
+      padding: 0;
+      margin: 0;
+    }
+  }
   &-logo {
     padding-top: 10px;
   }
   &__nav {
     display: block;
-    width: 65%;
     padding: 0;
     float: right;
+
+    @media (min-width: 768px) and (max-width: 992px){
+      width: 60%;
+    }
+    @media (min-width: 641px) and (max-width: 767px) {
+      width: 55%;
+      padding: 0 2px 0 2px;
+      margin: 0 15px;
+      padding-top: 15px;
+    }
     &-menu {
       padding: 24px 0;
       float: right;
+      @media (min-width: 768px) {
+        padding: 20px 0 0 0;
+      }
+      @media (min-width: 641px) and (max-width: 767px) {
+        padding: 0 2px 0 2px;
+      }
     }
 
     &-item {
       float: right;
       a.menu-btn {
         padding: 10px 25px;
+        @media (min-width: 768px) and (max-width: 992px){
+          padding: 5px 15px;
+        }
+        @media (max-width: 767px){
+          padding: 2px 8px;
+        }
         &::after {
           content: "";
           display: block;
           opacity: 0;
           position: relative;
-          top: 35px;
+          top: 40px;
           height: 2px;
           background-color: red;
+          @media (max-width: 992px) {
+            display: none;
+          }
         }
         &:hover {
           background-color: #fff;
