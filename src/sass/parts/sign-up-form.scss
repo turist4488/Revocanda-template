@@ -1,0 +1,50 @@
+.sign-up-form {
+  background: url("../img/slider3.jpg") no-repeat;
+  background-size: 100% auto;
+  max-height: 690px;
+
+  .overley-container {
+    background-color: $bg-color;
+    opacity: 0.95;
+    padding-bottom: 120px;
+  }
+
+  .section-title {
+    color: #fff;
+    text-align: center;
+    margin-top: 95px;
+    margin-bottom: 50px;
+  }
+
+  input {
+    border-radius: 0;
+    color: #fff;
+    line-height: 0;
+    padding: 20px;
+    border: 1px solid #fff;
+    font-size: 0.875em;
+    background-color: transparent;
+  }
+
+  textarea {
+    background-color: transparent;
+    font-size: 0.875em;
+  }
+
+  .btn {
+    font-size: 0.875em;
+    margin: 0 auto;
+    border-radius: 0;
+    border-color: #fff;
+    width: 320px;
+    line-height: 0;
+    padding: 20px;
+    background-color: transparent;
+    color: #fff;
+    transition: all 0.2s;
+    &:hover {
+      color: red;
+      background-color: #fff;
+    }
+  }
+}
