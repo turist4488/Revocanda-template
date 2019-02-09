@@ -19,17 +19,17 @@
 <header class="header">
 	<div class="container">
 			<div class=" container row">
-				<a class="header-logo img-responsive btn-link col-xs-1 col-sm-1" href="">
-					<img class="logo-img" src="img/logo.png" alt="">
+				<a class="header-logo btn-link col-xs-2 col-sm-1" href="">
+					<img class="logo-img img-responsive" src="img/logo.png" alt="">
 				</a>
-				<div class="nav-sm-buttons col-xs-3 col-xs-offset-5">
+				<a class="header__sign-up-btn btn btn-primary col-sm-1 col-md-1" href="">Регистрация</a>
+				<div class="nav-sm-buttons">
 					<button class="navbar-toggler" type="button">
 						<span class="navbar-toggler-dash"></span>
 						<span class="navbar-toggler-dash"></span>
 						<span class="navbar-toggler-dash"></span>
 					</button>
 				</div>
-				<a class="header__sign-up-btn btn btn-primary col-sm-1 col-md-1" href="">Регистрация</a>
 				<nav class=" col-sm-10 col-md-9 header__nav" id="collapsibleNavbar">
 					<ul class="nav nav-pills header__nav-menu">
 						<li class="header__nav-item"><a class="menu-btn" href="">О конференции</a></li>
@@ -423,33 +423,39 @@
 				<h2 class="section-title">Зарегистрироваться</h2>
 				<form class="text-center" action="" method="post">
 					<div class="form-row">
-						<div class="form-group col-md-4">
+						<div class="form-group col-md-4 col-sm-4 col-xs-12">
 							<input class="form-control" type="text" placeholder="ФИО">
 						</div>
-						<div class="form-group col-md-4">
+						<div class="form-group col-md-4 col-sm-4 col-xs-12">
 							<input class="form-control" type="text" placeholder="Ваш телефон">
 						</div>
-						<div class="form-group col-md-4">
+						<div class="form-group col-md-4 col-sm-4 col-xs-12">
 							<input class="form-control" type="email" placeholder="Ваш email">
 						</div>
 					</div>
-					<div class="form-row">
-						<div class="form-group col-md-6">
+					<div class="form-row" id="form-list-dropdown">
+						<div class="form-group col-md-6 col-sm-6 col-xs-12">
 							<input class="form-control" type="text" placeholder="Место работи">
 						</div>
-						<div class="form-group col-md-6">
+						<div class="form-group col-md-6 col-sm-6 col-xs-12">
 							<input class="form-control" type="text" placeholder="Должность">
 						</div>
 					</div>
-					<div class="form-row">
-						<div class="form-group col-md-4">
-							<textarea class="form-control" placeholder="Интерес к конференции" name="" cols="30" rows="10"></textarea>
+
+					<!-- button for sliding down the last form rows-->
+					<button type="button" class="form-row-toggle" style="display: none">
+						<i class="fas fa-caret-down"></i>
+					</button>
+
+					<div class="form-row dropdown-rows">
+						<div class="form-group single-form-group col-md-4 col-sm-4 col-xs-12">
+							<textarea class="form-control" cols="8" rows="7" placeholder="Интерес к конференции"></textarea>
 						</div>
-						<div class="form-group col-md-4">
-							<textarea class="form-control col-md-4" placeholder="Интерес к партнерской программе" name="" cols="30" rows="10"></textarea>
+						<div class="form-group single-form-group col-md-4 col-sm-4 col-xs-12">
+							<textarea class="form-control col-md-4" cols="8" rows="7" placeholder="Интерес к партнерской программе"></textarea>
 						</div>
-						<div class="form-group col-md-4">
-							<textarea class="form-control" placeholder="Опит работи с РПП" name="" cols="30" rows="10"></textarea>
+						<div class="form-group single-form-group col-md-4 col-sm-4 col-xs-12">
+							<textarea class="form-control" cols="8" rows="7" placeholder="Опит работи с РПП"></textarea>
 						</div>
 					</div>
 					<button type="submit" class="btn btn-lg btn-primary">ЗАРЕГИСТРИРОВАТЬСЯ</button>

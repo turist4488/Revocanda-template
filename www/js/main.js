@@ -6,17 +6,43 @@ jQuery().ready(function ($) {
         arrows: false,
         dots: true,
         appendDots: '.slick-list',
-        dotsClass: 'slider-dashes' // створив свій клас для кнопок слайдера '.slider-dashes' в файлі main.scss
+        dotsClass: 'slider-dashes', // створив свій клас для кнопок слайдера '.slider-dashes' в файлі main.scss
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 512,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     });
 
     //відображення модальних вікон
     $('.speakers [data-target*="speaker"]').click(function () {
-        //alert($(`.speakers [id=${this.getAttribute('data-target')}]`));
       $(`.modal[id=${this.getAttribute('data-target')}]`).modal('show');
     });
 
     $('.single-item').slick({
-        speed: 1000
+        speed: 1000,
+        dots: false,
+        appendDots: false,
     });
 
     // очистив кнопки які slick генерить сам
@@ -25,15 +51,17 @@ jQuery().ready(function ($) {
     $('.single-item button.slick-prev').text('<');
     $('.single-item button.slick-next').text('>');
 
-
-    if ($(window).width() <= 640) {
+    function createNewNavBtns() {
         let langButton = $('nav .header__nav-item:last-child');
         langButton.remove();
-
         $(langButton).css('list-style', 'none');
-        langButton.appendTo($('.header .nav-sm-buttons'));
-        $('.header .nav-sm-buttons').css('display', 'block');
 
+        let navButtons = $('.header .nav-sm-buttons');
+        langButton.appendTo(navButtons);
+        $(navButtons).css('display', 'block');
+    }
+
+    function createDropdownNav() {
         let ulOld = $('#collapsibleNavbar');
         ulOld.remove();
         ulOld.css({
@@ -42,12 +70,43 @@ jQuery().ready(function ($) {
         $(ulOld).removeClass('header__nav');
         $(ulOld).addClass('dropdown-list');
 
-        $('.header .container.row').css('border-bottom', '1px solid #1874cd');
-        (ulOld).insertAfter($('.header .container.row'));
+        let headerContainerRow = $('.header .container.row');
 
-        $('.navbar-toggler').css({display: 'inline-block'});
-        $('.navbar-toggler').click(function () {
-            $('#collapsibleNavbar').slideToggle(200);
-        })
+        $(headerContainerRow).css('border-bottom', '1px solid #1874cd');
+        (ulOld).insertAfter(headerContainerRow);
+    }
+
+    if ($(window).width() <= 640) {
+
+        createNewNavBtns();
+
+        createDropdownNav();
+
+        //BUTTON FOR MENU DROPDOWN
+        let navTogglerBtn = $('.navbar-toggler');
+        $(navTogglerBtn).css({display: 'inline-block'});
+        $(navTogglerBtn).click(function () {
+            $('#collapsibleNavbar').slideToggle(400);
+        });
+
+        //REDUCING TEXT INSIDE THE SLIDER FOR BEAUTY
+        $('.experts-notes__text').text('Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n' +
+            'Adipisci alias amet animi autem cum debitis, dicta distinctio\n' +
+            'ea, excepturi facere fugiat incidunt, laborum maiores nemo\n' +
+            'nostrum numquam odit omnis perspiciatis!');
+
+        let formListDrop = $('#form-list-dropdown');
+        let dropDownRows = $('.dropdown-rows .form-group');
+
+        dropDownRows.appendTo(formListDrop);
+        formListDrop.hide();
+        $('.dropdown-rows').remove();
+
+        let formDropToggle = $('.form-row-toggle');
+        formDropToggle.show();
+
+        $(formDropToggle).click(function () {
+            formListDrop.slideToggle(800);
+        });
     }
 });
