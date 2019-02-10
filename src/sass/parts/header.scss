@@ -1,11 +1,19 @@
 
 .header {
-  .dropdown {
+  .menu-lang-item {
     @media (max-width: 640px) {
-      margin-top: 15px;
+      z-index: 100;
+      margin-top: 20px;
       margin-right: 14px;
+      position: absolute;
+      top: 0;
+      right: 26%;
+    }
+    @media (max-width: 479px) {
+      right: 3%;
     }
   }
+
   .menu-lang-btn {
     color: #7f7e7c;
     padding: 9px 25px;
@@ -14,6 +22,11 @@
     @media (max-width: 992px) {
       padding: 3px 10px;
     }
+    @media (max-width: 640px) {
+      z-index: 100;
+      display: inline-block;
+    }
+
     &:hover,
     .nav &:focus{
       background-color: #fff;
@@ -31,6 +44,9 @@
       border-radius: 0;
       display: none;
       background-color: $bg-color;
+      @media (max-width: 640px) {
+        display: inline-block;
+      }
       &-dash {
         border-radius: 1px;
         display: block;
@@ -75,6 +91,14 @@
     padding: 0;
     float: right;
 
+    @media (max-width: 640px) {
+      display: none;
+      position: unset;
+      border-top: 1px solid $bg-color;
+      width: 100%;
+      text-align: center;
+    }
+
     @media (min-width: 768px) and (max-width: 992px){
       width: 60%;
     }
@@ -87,42 +111,14 @@
     &-menu {
       padding: 24px 0;
       float: right;
+      @media (max-width: 640px) {
+        float: none;
+      }
       @media (min-width: 768px) {
         padding: 20px 0 0 0;
       }
       @media (min-width: 641px) and (max-width: 767px) {
         padding: 0 2px 0 2px;
-      }
-    }
-
-    &-item {
-      float: right;
-      a.menu-btn {
-        padding: 10px 25px;
-        @media (min-width: 768px) and (max-width: 992px){
-          padding: 5px 15px;
-        }
-        @media (max-width: 767px){
-          padding: 2px 8px;
-        }
-        &::after {
-          content: "";
-          display: block;
-          opacity: 0;
-          position: relative;
-          top: 40px;
-          height: 2px;
-          background-color: red;
-          @media (max-width: 992px) {
-            display: none;
-          }
-        }
-        &:hover {
-          background-color: #fff;
-        }
-        &:hover::after {
-          opacity: 1;
-        }
       }
     }
 
@@ -158,6 +154,44 @@
     float: right;
     @media (max-width: 479px) {
       display: none;
+    }
+  }
+}
+
+li.header__nav-item {
+  float: left;
+
+  @media (max-width: 640px) {
+    display: block;
+    text-align: center;
+    float: none;
+    padding: 10px 0 ;
+  }
+  a.menu-btn {
+    padding: 10px 25px;
+    @media (min-width: 768px) and (max-width: 992px){
+      padding: 5px 15px;
+    }
+    @media (max-width: 767px){
+      padding: 2px 8px;
+    }
+    &::after {
+      content: "";
+      display: block;
+      opacity: 0;
+      position: relative;
+      top: 40px;
+      height: 2px;
+      background-color: red;
+      @media (max-width: 992px) {
+        display: none;
+      }
+    }
+    &:hover {
+      background-color: #fff;
+    }
+    &:hover::after {
+      opacity: 1;
     }
   }
 }

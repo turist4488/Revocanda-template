@@ -1,4 +1,6 @@
 jQuery().ready(function ($) {
+
+    //FOR SPEAKERS SLIDER
     $('.slider-nav').slick({
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -31,47 +33,26 @@ jQuery().ready(function ($) {
         ]
     });
 
-    //відображення модальних вікон
+    //SHOWS MODAL WINDOW
     $('.speakers [data-target*="speaker"]').click(function () {
       $(`.modal[id=${this.getAttribute('data-target')}]`).modal('show');
     });
 
-    //let singleSlider = $('.experts-notes__slider.single-item');
-    $('.experts-notes__slider.single-item').slick({
+    let singleSlider = $('.experts-notes__slider.single-item');
+        singleSlider.slick({
         speed: 1000,
         dots: false
     });
 
-    // очистив кнопки які slick генерить сам
+    // clears buttons created by default in slick
     $('.slider-dashes button').empty();
     $('.single-item button').empty();
     $('.single-item button.slick-prev').text('<');
     $('.single-item button.slick-next').text('>');
 
-    function createNewNavBtns() {
-        let langButton = $('nav .header__nav-item:last-child');
-        langButton.remove();
-        $(langButton).css('list-style', 'none');
-
-        let navButtons = $('.header .nav-sm-buttons');
-        langButton.appendTo(navButtons);
-        $(navButtons).css('display', 'block');
-    }
-
-    function createDropdownNav() {
-        let ulOld = $('#collapsibleNavbar');
-        ulOld.remove();
-        ulOld.css({
-            'display': 'none',
-        });
-        $(ulOld).removeClass('header__nav');
-        $(ulOld).addClass('dropdown-list');
-
-        let headerContainerRow = $('.header .container.row');
-
-        $(headerContainerRow).css('border-bottom', '1px solid #1874cd');
-        (ulOld).insertAfter(headerContainerRow);
-    }
+    $('#navbar-toggler-btn').click(function () {
+        $('#collapsibleNavbar').slideToggle(400);
+    });
 
     function createDropdownForm() {
         let formListDrop = $('#form-list-dropdown');
@@ -87,26 +68,5 @@ jQuery().ready(function ($) {
         $(formDropToggle).click(function () {
             formListDrop.slideToggle(800);
         });
-    }
-
-    if ($(window).width() <= 640) {
-
-        createNewNavBtns();
-
-        createDropdownNav();
-
-        //BUTTON FOR MENU DROPDOWN
-        let navTogglerBtn = $('.navbar-toggler');
-        $(navTogglerBtn).css({display: 'inline-block'});
-        $(navTogglerBtn).click(function () {
-            $('#collapsibleNavbar').slideToggle(400);
-        });
-
-        //REDUCING TEXT INSIDE THE SLIDER FOR BEAUTY
-        $('.experts-notes__text').text('Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n' +
-            'Adipisci alias amet animi autem cum debitis, dicta distinctio\n' +
-            'ea, excepturi facere fugiat incidunt, laborum maiores nemo\n' +
-            'nostrum numquam odit omnis perspiciatis!');
-        createDropdownForm();
     }
 });

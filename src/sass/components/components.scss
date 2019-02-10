@@ -27,16 +27,16 @@
   max-width: 100%;
   margin-right: 15px;
   @media (max-width: 640px) {
+    display: block;
     margin-top: 15px;
-    width: 35%;
   }
   @media (max-width: 479px) {
-    width: 45%;
     margin-right: 13px;
     margin-bottom: 15px;
+    right: 35%;
   }
   @media (max-width: 359px) {
-    width: 50%;
+    right: 40%;
   }
 }
 
