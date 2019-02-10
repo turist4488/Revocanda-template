@@ -50,23 +50,13 @@ jQuery().ready(function ($) {
     $('.single-item button.slick-prev').text('<');
     $('.single-item button.slick-next').text('>');
 
+    //DROPDOWN FOR HEADER MENU
     $('#navbar-toggler-btn').click(function () {
         $('#collapsibleNavbar').slideToggle(400);
     });
 
-    function createDropdownForm() {
-        let formListDrop = $('#form-list-dropdown');
-        let dropDownRows = $('.dropdown-rows .form-group');
-
-        dropDownRows.appendTo(formListDrop);
-        formListDrop.hide();
-        $('.dropdown-rows').remove();
-
-        let formDropToggle = $('.form-row-toggle');
-        formDropToggle.show();
-
-        $(formDropToggle).click(function () {
-            formListDrop.slideToggle(800);
-        });
-    }
+    //DROPDOWN FOR FORM INPUTS
+    $('.form-row-toggle').click(function () {
+        $('#form-list-dropdown').slideToggle(600);
+    });
 });
