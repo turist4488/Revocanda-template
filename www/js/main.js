@@ -51,9 +51,14 @@ jQuery().ready(function ($) {
     $('.single-item button.slick-next').text('>');
 
     //DROPDOWN FOR HEADER MENU
+
+    let dropdownNavBar = $('#collapsibleNavbar');
     $('#navbar-toggler-btn').click(function () {
-        $('#collapsibleNavbar').slideToggle(400);
+        dropdownNavBar.slideToggle(400);
     });
+
+    if($(window).width() > 640) dropdownNavBar.show();
+    else dropdownNavBar.hide();
 
     //DROPDOWN FOR FORM INPUTS
     $('.form-row-toggle').click(function () {
