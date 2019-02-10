@@ -1,11 +1,9 @@
-
 jQuery().ready(function ($) {
     $('.slider-nav').slick({
         slidesToShow: 4,
         slidesToScroll: 1,
         arrows: false,
         dots: true,
-        appendDots: '.slick-list',
         dotsClass: 'slider-dashes', // створив свій клас для кнопок слайдера '.slider-dashes' в файлі main.scss
         responsive: [
             {
@@ -13,8 +11,7 @@ jQuery().ready(function ($) {
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
+                    infinite: true
                 }
             },
             {
@@ -39,10 +36,10 @@ jQuery().ready(function ($) {
       $(`.modal[id=${this.getAttribute('data-target')}]`).modal('show');
     });
 
-    $('.single-item').slick({
+    //let singleSlider = $('.experts-notes__slider.single-item');
+    $('.experts-notes__slider.single-item').slick({
         speed: 1000,
-        dots: false,
-        appendDots: false,
+        dots: false
     });
 
     // очистив кнопки які slick генерить сам
@@ -76,6 +73,22 @@ jQuery().ready(function ($) {
         (ulOld).insertAfter(headerContainerRow);
     }
 
+    function createDropdownForm() {
+        let formListDrop = $('#form-list-dropdown');
+        let dropDownRows = $('.dropdown-rows .form-group');
+
+        dropDownRows.appendTo(formListDrop);
+        formListDrop.hide();
+        $('.dropdown-rows').remove();
+
+        let formDropToggle = $('.form-row-toggle');
+        formDropToggle.show();
+
+        $(formDropToggle).click(function () {
+            formListDrop.slideToggle(800);
+        });
+    }
+
     if ($(window).width() <= 640) {
 
         createNewNavBtns();
@@ -94,19 +107,6 @@ jQuery().ready(function ($) {
             'Adipisci alias amet animi autem cum debitis, dicta distinctio\n' +
             'ea, excepturi facere fugiat incidunt, laborum maiores nemo\n' +
             'nostrum numquam odit omnis perspiciatis!');
-
-        let formListDrop = $('#form-list-dropdown');
-        let dropDownRows = $('.dropdown-rows .form-group');
-
-        dropDownRows.appendTo(formListDrop);
-        formListDrop.hide();
-        $('.dropdown-rows').remove();
-
-        let formDropToggle = $('.form-row-toggle');
-        formDropToggle.show();
-
-        $(formDropToggle).click(function () {
-            formListDrop.slideToggle(800);
-        });
+        createDropdownForm();
     }
 });
