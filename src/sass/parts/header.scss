@@ -1,9 +1,6 @@
 
 .header {
   background-color: #fff;
-  @media (max-width: 640px) {
-    z-index: 200;
-  }
   .menu-lang-item {
     @media (max-width: 640px) {
       z-index: 100;
