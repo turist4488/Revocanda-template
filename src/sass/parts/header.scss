@@ -2,9 +2,7 @@
 .header {
   background-color: #fff;
   @media (max-width: 640px) {
-    position: sticky;
     z-index: 200;
-    top: 0;
   }
   .menu-lang-item {
     @media (max-width: 640px) {

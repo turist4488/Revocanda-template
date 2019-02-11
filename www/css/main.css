@@ -283,9 +283,7 @@ html body {
 
 @media (max-width: 640px) {
   .header {
-    position: sticky;
     z-index: 200;
-    top: 0;
   }
 }
 
